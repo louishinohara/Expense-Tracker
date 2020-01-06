@@ -1,5 +1,6 @@
+import 'package:expense_tracker/models/transaction.dart';
 import 'package:flutter/material.dart';
-
+import './widgets/user_transaction.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -13,7 +14,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-
   // String titleInput;
   // String amountInput;
   final titleController = TextEditingController();
@@ -28,7 +28,17 @@ class MyHomePage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
-
+        children: <Widget>[
+          Container(
+            width: double.infinity,
+            child: Card(
+              child: Text('Chart'),
+              color: Colors.blue,
+              elevation: 5,
+            ),
+          ),
+          UserTransaction()
+        ],
       ),
     );
   }
